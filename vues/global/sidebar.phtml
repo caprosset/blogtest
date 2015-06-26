@@ -1,3 +1,13 @@
+ <?php
+
+    $sql="SELECT * FROM `categorie`";
+    $requete=$connexion->prepare($sql);
+    $requete->execute();
+    $sidebarCategories = $requete->fetchAll(PDO::FETCH_ASSOC);
+    //var_dump($sidebarCategories);
+
+ ;?>
+
     <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
 
@@ -20,29 +30,25 @@
                     <h4>Blog Categories</h4>
                     <div class="row">
                         <div class="col-lg-6">
+                        <?php foreach ($sidebarCategories as $key => $value): ?>
+                        <?php if($value['id'] <= "4"): ?>
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="index.php?page=unecategorie&amp;id=<?php echo $value['id'];?>"><?php echo $value['titre']; ?></a>
                                 </li>
                             </ul>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
                         </div>
                         <!-- /.col-lg-6 -->
                         <div class="col-lg-6">
+                        <?php foreach ($sidebarCategories as $key => $value): ?>
+                        <?php if($value['id'] > "4"): ?>
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
+                                <li><a href="index.php?page=unecategorie&amp;id=<?php echo $value['id'];?>"><?php echo $value['titre']; ?></a>
                                 </li>
                             </ul>
+                         <?php endif; ?>
+                        <?php endforeach; ?>
                         </div>
                         <!-- /.col-lg-6 -->
                     </div>

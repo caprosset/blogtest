@@ -27,7 +27,9 @@
 		die();
 	}
 	
-	//Insertion d'un commentaire - je fais le traitement après le test sur l'existence d'un article; car si n'existe pas, ne sert à rien d'insérer un commentaire
+	//Insertion d'un commentaire - je fais le traitement après le test sur 
+	//l'existence d'un article; car si n'existe pas, ne sert à rien d'insérer
+	//un commentaire
 		//1. Créer un tableau $errors
 		$errors = [];
 
@@ -81,7 +83,7 @@
 
 		//REQUETE SQL POUR AFFICHER TOUS LES COMMENTAIRES
 
-			$sql = "SELECT * FROM `commentaire` WHERE id_article=$pageId";
+			$sql = "SELECT * FROM `commentaire` WHERE id_article=$pageId ORDER BY `date_commentaire` DESC";
 			$requete=$connexion->prepare($sql);
 			$requete->execute();
 			$comment = $requete->fetchAll(PDO::FETCH_ASSOC);

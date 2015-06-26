@@ -21,6 +21,10 @@
         <link href="<?=ROOT_CSS;?>blog-post.css" rel="stylesheet">
         <link href="<?=ROOT_LIB;?>jquery.raty.css" rel="stylesheet">
     <?php endif; ?>
+    
+    <?php if($currentPage == "unecategorie"): ?>
+        <link href="<?=ROOT_CSS;?>heroic-features.css" rel="stylesheet">
+    <?php endif; ?>
 
     <!-- ressources CSS globales -->
     <link href="<?=ROOT_CSS;?>blog-home.css" rel="stylesheet">
@@ -48,16 +52,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.php">OBJETIVO CHILE</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="index.php?page=contact">A propos</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="index.php?page=categories">Categories</a>
                     </li>
                     <li>
                         <a href="index.php?page=contact">Contact</a>

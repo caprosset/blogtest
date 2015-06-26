@@ -5,7 +5,7 @@
 	//2. faire la requête permettant de récupérer tous les articles 
 	//prepare, execute, fetchAll
 
-	$sql="SELECT * FROM `article` WHERE 1";
+	$sql="SELECT * FROM `article` WHERE 1 ORDER BY `date_article` DESC";
 	$requete=$connexion->prepare($sql);
 	$requete->execute();
 	$article = $requete->fetchAll(PDO::FETCH_ASSOC);
