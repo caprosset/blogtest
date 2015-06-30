@@ -1,0 +1,47 @@
+  <?php include("global/header.phtml"); ?>
+
+
+    <!-- Page Content -->
+    <form method="POST" enctype="multipart/form-data">
+        <label>Titre</label>
+        <input type="text" name="title" placeholder="Titre de l'article">
+        <hr>
+
+        <label>Description</label>
+        <input type="text" name="description" placeholder="Description de l'article">
+        <hr>
+
+        <label>Date</label>
+        <input type="date" name="date" placeholder="Date de l'article">
+        <hr>
+
+        <label>Auteur</label>
+        <input type="text" name="autor" placeholder="Auteur de l'article">
+        <hr>
+
+        <label>Catégories</label>
+        <select name="category"><?php foreach ($categories as $key => $value): ?>
+            <option value="<?php echo $value['id'];?>"><?php echo $value['titre'];?></option>
+            <?php endforeach; ?>
+        </select>
+        <hr>
+
+        <label>Image</label>
+            <input type="file" name="image">
+        <hr>
+
+        <button>Valider</button>
+
+    </form>
+
+    
+
+
+    <?php include("global/sidebar.phtml"); ?>
+
+
+
+
+    <?php include("global/footer.phtml"); ?>
+
+      

@@ -1,0 +1,43 @@
+    <?php include("global/header.phtml"); ?>
+
+
+<!-- Page Content -->
+ <div class="container">
+
+    <div class="row">
+
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Blog Post -->
+				 <h1>Mes articles favoris : </h1>
+
+				 <a href="index.php?page=favoris&amp;supprimer=true">Supprimer les favoris</a>
+            
+            <hr>
+
+
+            <!-- Title -->
+            <?php foreach ($pageFavori as $key => $value): ?>
+            <h2><a href=""><?php echo $value['titre']; ?></a></h2>
+
+            <!-- Author -->
+            <p class="lead">
+                by <a href="#"><?php echo $value['auteur']; ?></a>
+            </p>
+
+            <!-- Date/Time -->
+            <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $value['date_article']; ?></p>
+
+            <hr>
+				<?php endforeach; ?>     
+
+
+
+    <?php include("global/sidebar.phtml"); ?>
+    
+
+
+    <?php include("global/footer.phtml"); ?>
+
+                                              

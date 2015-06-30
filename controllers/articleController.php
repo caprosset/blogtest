@@ -16,7 +16,7 @@
 	$sql="SELECT * FROM `article` WHERE id=$pageId";
 	$requete=$connexion->prepare($sql);
 	$requete->execute();
-	$pageArticle = $requete->fetchAll(PDO::FETCH_ASSOC);
+	$pageArticle = $requete->fetch(PDO::FETCH_ASSOC);
 	//var_dump($pageArticle);
 	// echo $pageArticle[0]['titre'];
 

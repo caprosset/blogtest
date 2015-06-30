@@ -1,5 +1,11 @@
 <?php	
 
+	//FORMULAIRE DE CONNEXION
+	session_start();
+
+
+
+
 	//connexion à la base de données
 
 	$dataSource="mysql:host=localhost;dbname=blog;charset=utf8";
@@ -8,6 +14,7 @@
 	$connexion= new PDO($dataSource,$login,$mdp);
 	$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	$connexion->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 
 
 	//création de constantes pour garantir l'accès aux différents fichiers 

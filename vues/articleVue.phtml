@@ -10,35 +10,38 @@
 
             <!-- Blog Post -->
 
-            <?php foreach ($pageArticle as $key => $value): ?>
-
+            
             <!-- Title -->
-            <h1><?php echo $value['titre']; ?></h1>
+            <h1><?php echo $pageArticle['titre']; ?></h1>
 
             <!-- Author -->
             <p class="lead">
-                by <a href="#"><?php echo $value['auteur']; ?></a>
+                by <a href="#"><?php echo $pageArticle['auteur']; ?></a>
             </p>
 
             <hr>
 
+            <!-- Bookmark -->
+            <p><span class="star"></span><a href="index.php?page=ajouterFavori&amp;id=<?php echo $pageArticle['id'];?>">Ajouter aux favoris</a></p>
+
+            <hr>
+
             <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $value['date_article']; ?></p>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $pageArticle['date_article']; ?></p>
 
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-responsive" src="<?php echo ROOT_IMG.$value['image']; ?>" alt="">
+            <img class="img-responsive" src="<?php echo ROOT_IMG.$pageArticle['image']; ?>" alt="">
 
             <hr>
 
             <!-- Post Content -->
-            <p class="lead"><?php echo $value['description']; ?></p>
+            <p class="lead"><?php echo $pageArticle['description']; ?></p>
 
             <hr>
 
-            <?php endforeach; ?>
-
+           
             <!-- Blog Comments -->
 
             <!-- Comments Form -->
